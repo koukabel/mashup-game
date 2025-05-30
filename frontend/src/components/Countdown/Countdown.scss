@@ -1,0 +1,19 @@
+@import "../Utils/Utils.scss";
+
+.timer-wrapper {
+  @include text-size;
+  position: fixed;
+  bottom: 2%;
+  left: 45%;
+}
+
+svg {
+  width: 90px;
+  margin-top: 30px;
+}
+
+.value {
+  margin-right: 90px;
+  margin-top: 45px;
+  color: $white;
+}

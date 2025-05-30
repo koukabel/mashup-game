@@ -1,0 +1,41 @@
+@import "../Utils/Utils.scss";
+
+nav {
+  display: flex;
+  background-color: $black;
+  width: 100%;
+  align-content: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: auto;
+  align-items: center;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    list-style-type: none;
+    align-items: center;
+  }
+  a {
+    @include text-shadow;
+    @include text-nav;
+    color: $white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $orange;
+  }
+  .logo {
+    height: 80px;
+    margin-left: 10px;
+  }
+}
+
+.active {
+  color: $green;
+}
+
+.pending {
+  color: $black;
+}

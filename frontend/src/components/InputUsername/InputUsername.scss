@@ -1,0 +1,40 @@
+@import "../Utils/Utils.scss";
+.play {
+  background-color: $green;
+  border-radius: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: none;
+  width: 30%;
+  min-width: 8rem;
+  box-shadow: none;
+  border-color: $black;
+  border-bottom-style: groove;
+  border-right-style: groove;
+  border-top-style: groove;
+}
+.input-text {
+  display: flex;
+  background-color: $white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-style: groove;
+  border-left-style: groove;
+  border-top-style: groove;
+  border-color: $black;
+}
+
+.form-username {
+  display: flex;
+  width: 30%;
+  width: 30%;
+  justify-content: center;
+  flex-grow: 0;
+  flex-grow: 0;
+}
+.pseudo {
+  @include text-size;
+  color: $white;
+  @include text-shadow;
+  margin-bottom: 30px;
+}

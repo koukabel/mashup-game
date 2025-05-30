@@ -1,0 +1,9 @@
+@import "../Utils/Utils.scss";
+
+@import "../Utils/Utils.scss";
+
+.scoreTitle {
+  @include text-size;
+  color: $orange;
+  @include text-shadow;
+}

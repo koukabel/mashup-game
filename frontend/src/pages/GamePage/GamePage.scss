@@ -1,0 +1,20 @@
+@import "@components/Utils/Utils.scss";
+
+.restart {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 5%;
+  left: 46%;
+}
+
+.scoreTitle {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+.turns {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+}

@@ -1,0 +1,25 @@
+@import "../Utils/Utils.scss";
+
+.stopwatch-container {
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  margin-top: 10px;
+  align-items: flex-end;
+  position: absolute;
+  left: 45%;
+  top: 5%;
+  position: absolute;
+  left: 45%;
+  top: 5%;
+  z-index: 1;
+}
+
+.clock {
+  width: 10%;
+  font-size: 25px;
+  font-weight: 100;
+  color: $orange;
+  margin-top: 40px;
+  @include text-shadow;
+}

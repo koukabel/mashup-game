@@ -1,0 +1,95 @@
+@import "../Utils/Utils.scss";
+
+.header_text {
+  @include title;
+  color: $orange;
+  @include text-shadow;
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+.container {
+  margin-top: -100px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-color: $black;
+
+  .player {
+    margin-bottom: 30px;
+    background-color: $black;
+    margin-bottom: 30px;
+    background-color: $black;
+    display: grid;
+    gap: 200px;
+    grid-template-columns: 0.4fr 3fr 1fr;
+    gap: 200px;
+    grid-template-columns: 0.4fr 3fr 1fr;
+    min-height: 42px;
+    text-align: center;
+    @include text-size;
+    @include text-shadow;
+  }
+
+  .table {
+    margin-bottom: 30px;
+    margin-bottom: 30px;
+    display: grid;
+    gap: 200px;
+    gap: 200px;
+    font-size: 14px;
+    grid-template-columns: 0.4fr 3fr 1fr;
+    grid-template-columns: 0.4fr 3fr 1fr;
+    text-align: center;
+    color: $green;
+    @include text-shadow;
+    @include text-nav;
+  }
+
+  .playerslist {
+    margin-top: 6rem;
+    color: $white;
+    width: 80%;
+
+    .player:nth-child(1) {
+      background-color: #494a4d;
+      align-items: center;
+      color: yellow;
+    }
+
+    .player:nth-child(2) {
+      background-color: $black;
+      background-color: $black;
+      align-items: center;
+      color: gray;
+    }
+
+    .player:nth-child(3) {
+      background-color: $black;
+      background-color: $black;
+      align-items: center;
+      color: brown;
+    }
+  }
+  .scroll-bar-wrap {
+    width: 100%;
+    position: relative;
+    margin: 2em auto;
+  }
+  .scroll-box {
+    width: 100%;
+    height: 400px;
+    overflow-y: scroll;
+  }
+  .scroll-box::-webkit-scrollbar {
+    width: 0.4em;
+  }
+  .scroll-box::-webkit-scrollbar,
+  .scroll-box::-webkit-scrollbar-thumb {
+    overflow: visible;
+    border-radius: 4px;
+  }
+  .scroll-box::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}

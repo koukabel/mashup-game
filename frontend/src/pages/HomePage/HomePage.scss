@@ -1,0 +1,98 @@
+@import "../../components/Utils/Utils.scss";
+
+//header text animation
+.title_container {
+  margin-top: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Mashup span {
+  font-size: 60px;
+  display: inline-block;
+  text-align: center;
+  width: 60px;
+  text-transform: uppercase;
+  position: relative;
+  color: $white;
+  z-index: 5;
+}
+
+#Mashup span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: $orange;
+  z-index: -1;
+  box-shadow: 0 5px 5px #111;
+}
+
+#Mashup span::before {
+  animation: fillBg 1s ease forwards;
+  animation-delay: calc(100ms * var(--i));
+}
+
+@keyframes fillBg {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+    transform: rotate(calc(15deg * var(--i)));
+  }
+}
+
+.input-username {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 60px;
+  width: 100%;
+  justify-content: center;
+}
+
+.fetch-container {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.Zelda {
+  width: 30%;
+  min-width: 7rem;
+}
+.Disney {
+  width: 30%;
+  min-width: 7rem;
+}
+.start-button {
+  background-color: $green;
+  width: 50%;
+  min-width: 7rem;
+}
+.fetch-buttons-container {
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  justify-content: space-evenly;
+}
+.start-container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-top: 70px;
+}
+.themetitle {
+  margin-bottom: 40px;
+}
+.error {
+}
