@@ -7,7 +7,6 @@ import LeaderboardPage from "./pages/LeaderboardPage/LeaderboardPage";
 import RulesPage from "./pages/RulesPage/RulesPage";
 
 function App() {
-  // Only show StopWatch after 5 seconds
   return (
     <div className="App" onDragStart={(e) => e.preventDefault()}>
       <BrowserRouter>
