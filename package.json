@@ -8,9 +8,7 @@
     "migrate": "cd ./backend && node migrate.js",
     "dev": "cross-env-shell 'concurrently -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"$npm_package_config_cli:dev-*\"'",
     "dev-front": "vite",
-    "dev-back": "cross-env-shell \"cd ./backend && $npm_package_config_cli run dev\"",
-    "lint": "cross-env-shell \"cd ./frontend && $npm_package_config_cli run lint && cd ../backend && $npm_package_config_cli run lint\"",
-    "fix": "cross-env-shell \"cd ./frontend && $npm_package_config_cli run fix && cd ../backend && $npm_package_config_cli run fix\""
+    "dev-back": "cross-env-shell \"cd ./backend && $npm_package_config_cli run dev\""
   },
   "keywords": [],
   "author": "KB",
