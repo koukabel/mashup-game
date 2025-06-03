@@ -54,3 +54,42 @@ input.front {
   @include text-shadow;
   color: $white;
 }
+
+
+@media screen and (max-width: 768px) {
+  .imageGrid {
+    width: calc(100vw - 40px);
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 60px;
+  }
+  .card-outer {
+    height: calc((110vh - 190px) / 2);
+    max-height: calc((100vw - 90px) / 3);
+  }
+  .clock{
+    width: 100%;
+  }
+  .restart {
+    bottom: 4%;
+    left: 56%;
+    width: 150px;
+  }
+  .turns {
+    position: absolute;
+    bottom: 11%;
+    left: 28%;
+    width: 100px;
+}
+
+.scoreTitle {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width: 146px;
+}
+
+.stopwatch-container{
+  left: auto;
+
+}
+}

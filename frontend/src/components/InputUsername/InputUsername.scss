@@ -22,6 +22,7 @@
   border-left-style: groove;
   border-top-style: groove;
   border-color: $black;
+  height: auto;
 }
 
 .form-username {
@@ -37,4 +38,17 @@
   color: $white;
   @include text-shadow;
   margin-bottom: 30px;
+  width: 30%;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+  .form-username {
+    display: flex;
+    width: 340px;
+  }
+  
+  
 }

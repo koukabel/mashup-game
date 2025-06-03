@@ -52,13 +52,13 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   width: 100%;
   justify-content: center;
 }
 
 .fetch-container {
-  width: 100%;
+  width: 30%;
   display: flex;
   flex-flow: column wrap;
   align-content: center;
@@ -82,8 +82,8 @@
 .fetch-buttons-container {
   display: flex;
   flex-direction: row;
-  width: 30%;
-  justify-content: space-evenly;
+  width: 100%;
+  justify-content: space-between;
 }
 .start-container {
   display: flex;
@@ -93,6 +93,23 @@
 }
 .themetitle {
   margin-bottom: 40px;
+  text-align: center;
 }
 .error {
+}
+
+@media screen and (max-width: 768px) {
+  .fetch-container {
+    width: 80%;
+    
+  }
+  .themetitle {
+   text-align: center;
+  }
+  .fetch-buttons-container {
+    justify-content: space-between;
+  }
+  .title_container {
+  margin-top: 60px;}
+  
 }

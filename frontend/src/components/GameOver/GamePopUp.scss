@@ -1,83 +1,120 @@
-@import "@components/Utils/Utils.scss";
 
-.popup {
-  // @include absolute-center();
-  box-shadow: inset 4px 4px 82px $red;
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
-  background-color: $orange;
-  justify-content: flex-start;
-  transition: transform 200ms;
-  color: $red;
   align-items: center;
-  flex-wrap: nowrap;
-  align-content: stretch;
-  flex-direction: column;
-  border-radius: 15px;
-  width: 85vh;
-  @include absolute-center;
-  z-index: 100;
-  height: 60vh;
-  border-style: groove;
-  border-color: $black;
-  @include object-shadow;
-}
-.score-popup {
-  color: $white;
-  -webkit-text-stroke: 1px black;
-  @include text-shadow;
-  @include text-nav;
-  width: 50%;
-  text-align: center;
-}
-.turns-popup {
-  padding-left: 5px;
-  color: $white;
-  -webkit-text-stroke: 1px black;
-  @include text-shadow;
-  @include text-nav;
-  width: 50%;
-  text-align: center;
+  z-index: 1000;
 }
 
-.logo-popup {
-  // @include absolute-center();
-  width: 200px;
-  object-fit: cover;
+.popup-content {
+  background: #c5c5c5;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border: 2px solid #4a4a4a;
 }
-.restart-popup {
-  background-color: $black;
+
+.popup-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
 }
-.stats {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-content: center;
-  margin-bottom: 40px;
-}
+
 .win-title {
-  color: $green;
-  -webkit-text-stroke: 1px black;
-  @include text-shadow;
-  @include title;
+  color: #4CAF50;
+  text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
 }
 
 .lose-title {
-  color: $red;
-  -webkit-text-stroke: 1px black;
-  @include text-shadow;
-  @include title;
-}
-.win-under {
-  color: $green;
-  -webkit-text-stroke: 1px black;
-  @include text-shadow;
-  @include text-nav;
+  color: #F44336;
+  text-shadow: 0 0 10px rgba(244, 67, 54, 0.5);
 }
 
-.lose-under {
-  color: $red;
-  -webkit-text-stroke: 1px black;
-  @include text-shadow;
-  @include text-nav;
+.popup-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+.popup-icon {
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.popup-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.popup-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #111;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+/* Confetti effect for win */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #f00;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  animation: confetti 5s ease-in-out infinite;
+}
+
+@keyframes confetti {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) rotate(360deg); opacity: 0; }
+}
+
+/* Create multiple confetti pieces */
+.popup-icon.win::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, #f00, transparent 30%),
+    radial-gradient(circle at 80% 20%, #0f0, transparent 30%),
+    radial-gradient(circle at 40% 70%, #00f, transparent 30%);
+  opacity: 0.3;
+  z-index: -1;
+}
+
+button#restart{
+    width: 168px;
 }
