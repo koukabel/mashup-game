@@ -23,3 +23,44 @@
     transform: rotate(360deg);
   }
 }
+
+.start-game-button {
+  width: max-content;
+  background-color: $green;
+  color: $white;
+  font-weight: bold;
+  height: 86px;
+  margin: 0px 20px;
+
+  &:hover {
+    background-color: darken($green, 10%);
+    cursor: pointer;
+  }
+}
+
+.api-results {
+  position: relative;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.api-results button {
+  width: 150px;
+}
+
+.api-button {
+  width: 150px;
+}
+
+@media screen and (max-width: 768px) {
+  .api-results {
+  }
+  #Mashup span {
+    font-size: 40px;
+  }
+
+  .header-text {
+    margin: 31px 15px;
+  }
+}

@@ -13,17 +13,14 @@ const API_LIST = [
     key: "id",
     item_name: "name",
   },
-  // {
-  //   name: "Pokémon",
-  //   url: "https://pokeapi.co/api/v2/pokemon",
-  //   path_to_data: "results",
-  //   path_to_image: "url", // Just store the URL, we'll process it in GameLogic
-  //   image_template:
-  //     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{id}.png",
-  //   key: "name",
-  //   item_name: "name",
-  // },
-  // Add other APIs here...
+  {
+    name: "Studio Ghibli",
+    url: `https://ghibliapi.vercel.app/films`,
+    path_to_data: "",
+    path_to_image: "image",
+    key: "id",
+    item_name: "title",
+  },
 ];
 
 function HomePage() {
@@ -34,7 +31,6 @@ function HomePage() {
   const handleApiSelect = (apiName, data) => {
     setSelectedApi(apiName);
     setApiData(data);
-    console.log(`Selected API: ${apiName}`, data);
   };
 
   return (

@@ -1,6 +1,6 @@
 @import "../Utils/Utils.scss";
 
-nav {
+.navbar {
   display: flex;
   background-color: $black;
   width: 100%;
@@ -9,10 +9,20 @@ nav {
   flex-direction: row;
   height: auto;
   align-items: center;
-  ul {
+      //padding: 10px 20px 0px 10px;
+}
+
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px 40px;
+  width: 100%;
+}
+  .desktop-menu {
     display: flex;
     justify-content: space-around;
-    width: 50%;
     list-style-type: none;
     align-items: center;
   }
@@ -27,10 +37,12 @@ nav {
     color: $orange;
   }
   .logo {
+    width: 90px;
     height: 80px;
     margin-left: 10px;
+    cursor: pointer;
   }
-}
+
 
 .active {
   color: $green;
@@ -38,4 +50,68 @@ nav {
 
 .pending {
   color: $black;
+}
+
+.mobile-menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: none;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+  
+  li {
+    list-style: none;
+    
+    a {
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+      
+      &:hover {
+        color: #0066cc;
+      }
+    }
+  }
+}
+
+// Media queries
+@media (min-width: 768px) {
+  .mobile-menu-button,
+  .mobile-menu-overlay {
+    display: none;
+  }
+
+  
+}
+
+@media (max-width: 767px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu-button {
+    width: 100px;
+  }
+  .nav-container {
+   margin: 3px 30px;
+  }
 }

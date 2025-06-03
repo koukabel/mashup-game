@@ -3,12 +3,6 @@ import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import "./Countdown.scss";
 
 const renderTime = ({ remainingTime }) => {
-  if (remainingTime === 0) {
-    // hide countdown
-    // const countdown = document.querySelector(".timer-wrapper");
-    // countdown.style.display = "none";
-  }
-
   return (
     <div className="timer">
       <div className="value">{remainingTime}</div>

@@ -37,7 +37,7 @@ function FetchButtons({
 
     try {
       const response = await axios.get(url);
-      const api = apiList.find((api) => api.name === name);
+      const api = apiList.find((apiConfig) => apiConfig.name === name);
 
       if (!api) {
         throw new Error(`API configuration not found for ${name}`);
@@ -111,10 +111,11 @@ function FetchButtons({
             className={`api-button ${selectedApi === api.name ? "active" : ""}`}
             onClick={() => fetchData(api.url, api.name)}
             disabled={isLoading}
+            type="button"
           >
             {api.name}
             {isLoading && selectedApi === api.name && (
-              <span className="button-loader"></span>
+              <span className="button-loader" />
             )}
           </button>
         ))}
@@ -122,7 +123,11 @@ function FetchButtons({
 
       {selectedApi && localApiData.length > 0 && (
         <div className="api-results">
-          <button className="start-game-button" onClick={handleStartGame}>
+          <button
+            className="start-game-button"
+            onClick={handleStartGame}
+            type="button"
+          >
             Start Game
           </button>
         </div>
@@ -146,7 +151,12 @@ FetchButtons.propTypes = {
   ).isRequired,
   onApiSelect: PropTypes.func.isRequired,
   selectedApi: PropTypes.string,
-  apiData: PropTypes.arrayOf(PropTypes.object),
+  apiData: PropTypes.arrayOf(PropTypes.shape({})),
+};
+
+FetchButtons.defaultProps = {
+  apiData: [],
+  selectedApi: undefined,
 };
 
 export default FetchButtons;
