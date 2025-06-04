@@ -5,7 +5,6 @@ import path from "path";
 export default defineConfig({
   plugins: [
     react({
-      // Enable Fast Refresh
       fastRefresh: true,
     }),
   ],
@@ -18,13 +17,15 @@ export default defineConfig({
     },
   },
   server: {
-    // Watch options for better HMR
+    host: true, // Listen on all network interfaces
+    port: 5173,
+    strictPort: true,
     watch: {
-      usePolling: true,
+      usePolling: true, // Required for Docker
       interval: 1000,
     },
-
     hmr: {
+      clientPort: 5173, // Important for Docker
       overlay: true,
     },
   },
