@@ -18,7 +18,7 @@ export default defineConfig({
   },
   server: {
     host: true, // Listen on all network interfaces
-    allowedHosts: ["all"], // Allow all hosts
+    allowedHosts: "jesus.home", // Allow all hosts
     port: 5173,
     strictPort: true,
     watch: {
