@@ -7,7 +7,7 @@ COPY backend /tmp/backend
 COPY .tours tmp/.tours
 COPY .husky tmp/.husky
 WORKDIR /tmp
-RUN npm install
+RUN npm install --ignore-scripts
 ENTRYPOINT ["npm", "run"]
 CMD ["dev"]
 
