@@ -1,13 +1,27 @@
 FROM node:18
-RUN mkdir /tmp/frontend && mkdir /tmp/backend && mkdir /tmp/.tours && mkdir /tmp/.husky
-COPY package* tmp/
-COPY captain* tmp/
+
+# Create directories
+RUN mkdir -p /tmp/frontend && \
+    mkdir -p /tmp/backend && \
+    mkdir -p /tmp/.tours
+
+# Copy files
+COPY package* /tmp/
+COPY captain* /tmp/
 COPY frontend /tmp/frontend
 COPY backend /tmp/backend
-COPY .tours tmp/.tours
-COPY .husky tmp/.husky
+COPY .tours /tmp/.tours
+
+
+# Set working directory
 WORKDIR /tmp
+
+# Install dependencies
 RUN npm install --ignore-scripts
+
+# Expose port 80 (correct syntax)
+EXPOSE 80
+
+# Set entrypoint
 ENTRYPOINT ["npm", "run"]
 CMD ["dev"]
-
