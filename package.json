@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "cross-env-shell \"husky install && cd ./frontend && $npm_package_config_cli install && cd ../backend && $npm_package_config_cli install\"",
     "migrate": "cd ./backend && node migrate.js",
-    "dev": "concurrently -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"cd frontend && vite\" \"cd backend && npm run dev\"",
+    "dev": "concurrently -c green -t \"HH:mm:ss\" -p \"{name} {time}\" \"cd frontend && vite\"",
     "dev-front": "vite",
     "dev-back": "cross-env-shell \"cd ./backend && $npm_package_config_cli run dev\""
   },
