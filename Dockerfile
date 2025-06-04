@@ -6,4 +6,4 @@ RUN npm install --ignore-scripts
 COPY frontend .
 
 EXPOSE 5173
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["npm", "run", "dev-front", "--", "--host"]
