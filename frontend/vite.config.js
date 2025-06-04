@@ -17,17 +17,10 @@ export default defineConfig({
     },
   },
   server: {
-    host: true, // Listen on all network interfaces
-    allowedHosts: "all",
-    port: 5173,
-    strictPort: true,
-    watch: {
-      usePolling: true, // Required for Docker
-      interval: 1000,
-    },
     hmr: {
-      clientPort: 5173, // Important for Docker
+      clientPort: 5173,
       overlay: true,
+      protocol: "ws",
     },
   },
   optimizeDeps: {
